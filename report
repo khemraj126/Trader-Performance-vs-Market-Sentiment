@@ -1,0 +1,91 @@
+#  Trader Behavior & Sentiment Analysis
+
+##  Overview
+
+This project analyzes trader performance and behavior using market sentiment data (Fear vs Greed). It combines trading activity with sentiment signals to uncover patterns, generate insights, and build simple predictive models.
+
+##  Objectives
+
+* Analyze how **market sentiment (Fear vs Greed)** affects trader performance
+* Study changes in **trading behavior** (frequency, size, direction)
+* Segment traders into meaningful groups
+* Build a **predictive model** for next-day profitability
+
+
+##  Datasets Used
+
+1. **Sentiment Dataset**
+
+   * `timestamp`, `classification` (Fear/Greed)
+
+2. **Trading Dataset**
+
+   * `Account`, `Closed PnL`, `Size USD`, `Side`, `Timestamp IST`, etc.
+
+
+##  Data Processing and EDA
+
+* Cleaned and formatted timestamps
+* Aligned datasets using `merge_asof`
+* Created features:
+
+  * Daily PnL
+  * Win rate
+  * Trade frequency
+  * Trade size
+
+### 1. Sentiment vs Performance
+
+* Compared **PnL, win rate, drawdown** across Fear and Greed
+
+### 2. Behavioral Analysis
+
+* Trade frequency
+* Position sizes
+* Long/Short ratio
+
+### 3. Trader Segmentation
+
+* Frequent vs Infrequent traders
+* Consistent vs Inconsistent traders
+
+
+
+# Model
+
+* Model: Random Forest Classifier
+* Target: Next-day profitability (Profit/Loss)
+* Features:
+
+  * PnL
+  * Trade size
+  * Number of trades
+  * Sentiment
+
+
+##  Clustering
+
+* Used K-Means to group traders into:
+
+  * Consistent
+  * Risky
+  * Moderate
+
+## Dashboard
+
+* Built using Streamlit
+* Features:
+
+  * Sentiment filtering
+  * Performance metrics
+  * Interactive charts
+
+## Key Insights
+
+* Trading performance varies with market sentiment
+* Traders show higher activity during Greed periods
+* Consistent traders outperform inconsistent ones
+
+
+## conclusion
+This project demonstrates how combining **sentiment data with trading behavior** can provide meaningful insights and improve decision-making through data-driven strategies.
